@@ -7,11 +7,11 @@ app = Flask(__name__)
 
 # MySQL connection
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Panduanu@12",
-    database="tours_travels_db",
-    ssl_disabled=True
+    host=os.getenv("MYSQLHOST"),
+    user=os.getenv("MYSQLUSER"),
+    password=os.getenv("MYSQLPASSWORD"),
+    database=os.getenv("MYSQLDATABASE"),
+    port=int(os.getenv("MYSQLPORT", 3306))
 )
 
 cursor = db.cursor()
