@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+
+<h2>Admin Dashboard</h2>
+
+<a href="/add_destination">
+    <button>Add New Destination</button>
+</a>
+
+<br><br>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Days</th>
+        <th>Image</th>
+        <th>Type</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for d in data %}
+    <tr>
+        <td>{{ d.id }}</td>
+        <td>{{ d.name }}</td>
+        <td>{{ d.description }}</td>
+        <td>{{d.days}}</td>
+        <td>
+            <img src="{{ url_for('static', filename='images/' + d.image) }}" width="100">
+        </td>
+        <td>{{ d.type }}</td>
+        <td>
+            <a href="/delete/{{ d.id }}">
+                <button>Delete</button>
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>

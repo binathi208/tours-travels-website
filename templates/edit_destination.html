@@ -1,0 +1,18 @@
+<h2>Edit Destination</h2>
+
+<form method="POST">
+
+    <input type="text" name="name" value="{{ d.name }}" required><br><br>
+
+    <input type="text" name="description" value="{{ d.description }}" required><br><br>
+
+    <input type="text" name="image" value="{{ d.image }}" required><br><br>
+
+    <select name="type" required>
+        <option value="domestic" {% if d.type == 'domestic' %}selected{% endif %}>Domestic</option>
+        <option value="international" {% if d.type == 'international' %}selected{% endif %}>International</option>
+    </select><br><br>
+
+    <button type="submit">Update</button>
+
+</form>

@@ -1,0 +1,666 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: white;
+}
+h1, h2, h3, p {
+    margin: 0;
+}
+
+.packages {
+    background-color: #0b2cff;
+    padding: 10px 20px;
+    text-align: center;
+}
+.card {
+    display: inline-block;
+    background: white;
+    width: 120px;
+    margin: 5px;        /* smaller */
+    padding: 8px;       /* smaller */
+    font-weight: bold;
+}
+
+
+.footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+input, textarea {
+    width: 250px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+button {
+    background: white;
+    color:black;
+    border: none;
+    padding:5px 10px;
+    cursor: pointer;
+}
+.navbar {
+    background: #003366;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 6px 10px;
+    display: inline-block;
+}
+/* DESTINATIONS SECTION */
+.destinations {
+    background: #ffffff;
+    padding: 30px;
+    text-align: center;
+}
+.destinations h2 {
+    margin-bottom: 20px;
+}
+
+/* DESTINATION CARDS */
+.dest-card {
+    display: inline-block;
+    width: 220px;
+    background: #f9f9f9;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+/* DESTINATION IMAGES */
+.dest-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+/* DESTINATION TEXT */
+.dest-card h3 {
+    color: #0066cc;
+    margin: 10px 0 5px;
+}
+
+.dest-card p {
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+.dest-card button {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.dest-card button:hover {
+    background: #004a99;
+}
+
+/* SLIDER */
+.slider {
+    width: 100%;
+    height: 100vh;              /* FULL SCREEN HEIGHT */
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* fills screen */
+    object-position: center;    /* center image */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* HEADER */
+.header {
+    background: blue;
+    padding: 15px 25px;
+    position: relative;   /* REQUIRED FOR CENTERING */
+}
+
+/* CENTER TEXT */
+.header-center {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.header-center h1 {
+    font-size: 30px;
+    color: white;
+}
+
+.header-center p {
+    font-size: 20px;
+    color: white;
+}
+
+/* HEADER LAYOUT */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* LEFT & RIGHT */
+}
+
+/* LEFT SIDE (LOGO + TEXT) */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* LOGO BADGE */
+.header-left img {
+    height: 150px;        /* change size here */
+    width: 150px;
+    border-radius: 80%;
+    object-fit: cover;
+    background: white;
+    padding: 10px;
+}
+
+
+/* RIGHT SIDE (CONTACT) */
+.header-right {
+    text-align: right;
+    align-self: flex-end;   /* move down */
+    margin-bottom: 5px;     /*this moves it to bottom*/
+}
+
+.header-right p {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.header-right a {
+    color: #25d366;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
+}
+/* COMPANY DETAILS SECTION */
+.company-details {
+    background: blue;
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.company-details h2 {
+    font-size: 28px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+/* GRID */
+.company-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* CARD */
+.company-card {
+    background: white;
+    width: 260px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.company-card:hover {
+    transform: translateY(-5px);
+}
+
+.company-card h3 {
+    color: #0066cc;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.company-card p {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* HERO TEXT ON SLIDER */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 25px 40px;
+    border-radius: 8px;
+}
+
+.hero-text h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-btn {
+    background: #ffcc00;
+    color: #003366;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.hero-btn:hover {
+    background: #ffd633;
+}
+
+/* FLOATING WHATSAPP BUTTON */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    font-size: 26px;
+    padding: 14px 16px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+.whatsapp-float:hover {
+    background: #1ebe5d;
+}
+
+/* FOOTER */
+.footer-main {
+    background: #003366;
+    color: white;
+    padding-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 40px 30px;
+}
+
+.footer-section {
+    max-width: 320px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: #ffcc00;
+    margin-bottom: 12px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+/* FOOTER */
+.footer-main {
+    background: #003366;
+    color: white;
+    padding-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 40px 30px;
+}
+
+.footer-section {
+    max-width: 320px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: #ffcc00;
+    margin-bottom: 12px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+.footer-bottom {
+    background: #002244;
+    text-align: center;
+    padding: 12px;
+    font-size: 13px;
+}
+/* TESTIMONIALS */
+.testimonials {
+    background: #f4f6fb;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 30px;
+    color: #003366;
+    margin-bottom: 40px;
+}
+.testimonial-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background: white;
+    width: 300px;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+.testimonial-card p {
+    font-size: 14.5px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.testimonial-card h4 {
+    color: #003366;
+    margin-bottom: 6px;
+}
+
+.testimonial-card span {
+    color: #ffb703;
+    font-size: 18px;
+}
+ /*MOBILE RESPONSIVE STYLES */
+@media (max-width: 768px){
+
+    /* HEADER */
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+}
+ .header-left img {
+        height: 100px;
+        width: 100px;
+    }
+     .header-center h1 {
+        font-size: 22px;
+    }
+
+    .header-right {
+        text-align: center;
+        align-self: center;
+    }
+     /* NAVBAR */
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar a {
+        margin: 5px 8px;
+        font-size: 14px;
+    }
+
+    /* HERO TEXT */
+    .hero-text {
+        width: 90%;
+        padding: 20px;
+    }
+    .hero-text h1 {
+        font-size: 26px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+    /* PACKAGES */
+    .packages h2 {
+        font-size: 22px;
+    }
+
+    .card {
+        width: 80%;
+        margin: 8px auto;
+    }
+     /* DESTINATIONS */
+    .dest-card {
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    /* COMPANY DETAILS */
+    .company-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .company-card {
+        width: 90%;
+    }
+        /* TESTIMONIALS */
+    .testimonial-card {
+        width: 90%;
+    }
+
+    /* FOOTER */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+.booking-form {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.booking-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.booking-form input,
+.booking-form textarea,
+.booking-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.booking-form button {
+    background: #007bff;
+    color: white;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.booking-form button:hover {
+    background: #0056b3;
+}
+
+.center {
+    text-align: center;
+}
+/* ===============================
+   NAVBAR DROPDOWN MENU
+================================ */
+
+.dropdown {
+    position: relative;
+    margin: 0 15px;
+}
+
+.dropbtn {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 6px 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: #ffcc00;
+}
+/* ===== NAVBAR FIX ===== */
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #003366;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 14px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: #ffcc00;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aaradhya Tours & Travels</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-content">
+
+        <!-- LEFT -->
+        <div class="header-left">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+        </div>
+
+        <!-- CENTER -->
+        <div class="header-center">
+            <h1>Aaradhya Tours & Travels</h1>
+            <p>Turning Miles into Memories</p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="header-right">
+            <p>📞 9492305048</p>
+            <a href="https://wa.me/919492305048">💬 WhatsApp</a>
+            
+        </div>
+
+
+    </div>
+</header>
+
+<!-- NAVBAR (UNDER TITLE) -->
+<nav class="navbar">
+
+    <a href="/">Home</a>
+    <!-- scroll to top destinations----->
+    <a href="#top-destinations">Destinations</a>
+    <a href="/contact">Contact</a>
+    <a href="/admin">Admin</a>
+
+</nav>
+
+
+<!-- IMAGE SLIDER -->
+<div class="slider">
+    <img src="{{ url_for('static', filename='images/slide1.jpg') }}" class="slide active">
+    <img src="{{ url_for('static', filename='images/slide2.jpg') }}" class="slide">
+    <img src="{{ url_for('static', filename='images/slide3.jpg') }}" class="slide">
+<!-- HERO TEXT -->
+    <div class="hero-text">
+        <h1>Explore India with Aaradhya Tours & Travels</h1>
+        <p>Customized Domestic & Spiritual Tour Packages</p>
+        <a href="/contact" class="hero-btn">Book Your Trip</a>
+    </div>
+</div>
+
+
+<!---Domestic-->
+<section class="destinations" id="top-destinations">
+    <h2>Domestic Destinations</h2>
+
+    {% for d in domestic %}
+    <div class="dest-card">
+        <img src="{{ url_for('static', filename='images/' + d.image) }}">
+        <h3>{{ d.name }}</h3>
+        <p>{{ d.description }}</p>
+        <a href="/booking?destination={{ d.name }}">
+            <button>Book Now</button>
+        </a>
+    </div>
+    {% endfor %}
+</section>
+<!---INTERNATIONAL-->
+    <section class="destinations">
+    <h2>International Destinations</h2>
+
+    {% for d in international %}
+    <div class="dest-card">
+        <img src="{{ url_for('static', filename='images/' + d.image) }}">
+        <h3>{{ d.name }}</h3>
+        <p>{{ d.description }}</p>
+        <a href="/booking?destination={{ d.name }}">
+            <button>Book Now</button>
+        </a>
+    </div>
+    {% endfor %}
+</section>
+
+<!-- COMPANY DETAILS / HIGHLIGHTS -->
+<section class="company-details">
+    <h2>Why Choose Aaradhya Tours & Travels</h2>
+
+    <div class="company-grid">
+
+        <div class="company-card">
+            <h3>🌍 Trusted Travel Partner</h3>
+            <p>
+                We provide reliable and customized travel solutions with
+                complete transparency and customer satisfaction.
+            </p>
+        </div>
+
+        <div class="company-card">
+            <h3>🧳 Wide Range of Packages</h3>
+            <p>
+                Domestic, International, Temple Tours, Honeymoon Packages,
+                Group Tours, and Corporate Travel solutions.
+            </p>
+        </div>
+
+        <div class="company-card">
+            <h3>🚗 End-to-End Services</h3>
+            <p>
+                From transport and hotels to sightseeing and guidance,
+                we handle everything for a smooth journey.
+            </p>
+        </div>
+
+        <div class="company-card">
+            <h3>📞 24/7 Customer Support</h3>
+            <p>
+                Our team is always available to assist you before,
+                during, and after your trip.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2>What Our Customers Say</h2>
+
+    <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+            <p>
+                “Excellent service and well-planned trip.
+                Aaradhya Tours arranged our Tirupati visit perfectly.”
+            </p>
+            <h4>— Suresh Reddy</h4>
+            <span>⭐⭐⭐⭐⭐</span>
+        </div>
+  <div class="testimonial-card">
+            <p>
+                “Very professional and affordable packages.
+                We enjoyed our Kerala trip without any stress.”
+            </p>
+            <h4>— Priya Sharma</h4>
+            <span>⭐⭐⭐⭐⭐</span>
+        </div>
+         <div class="testimonial-card">
+            <p>
+                “Best travel agency for family tours.
+                Support team was available throughout the journey.”
+            </p>
+            <h4>— Ramesh Kumar</h4>
+            <span>⭐⭐⭐⭐⭐</span>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer-main">
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>Aaradhya Tours & Travels</h3>
+            <p>
+                Aaradhya Tours & Travels is a trusted travel partner offering
+                domestic, spiritual, and customized tour packages across India.
+                We focus on comfort, safety, and customer satisfaction.
+            </p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>📞 9492305048</p>
+            <p>💬 WhatsApp Available</p>
+            <p>📧 aaradhyatours@gmail.com</p>
+            <p>📍 Tirupati, Andhra Pradesh</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Aaradhya Tours & Travels. All Rights Reserved.
+    </div>
+</footer>
+<script>
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+}, 3000);
+</script>
+<a href="https://wa.me/+919492305048" class="whatsapp-float" target="_blank">
+    💬
+</a>
+</body>
+</html>
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Tour</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<h2 class="center">Tour Booking Form</h2>
+
+<form method="POST" action="/booking" class="booking-form">
+
+    <label>Full Name</label>
+    <input type="text" name="name" required>
+
+    <label>Mobile Number</label>
+    <input type="tel" name="phone" required>
+
+    <label>Email</label>
+    <input type="email" name="email">
+
+    <label>Destination</label>
+    <input type="text" name="destination" value="{{ destination }}" readonly>
+
+    <label>Travel Date</label>
+    <input type="date" name="travel_date" required>
+
+    <label>Number of Adults</label>
+    <input type="number" name="adults" min="1" required>
+
+    <label>Number of Children</label>
+    <input type="number" name="children" min="0">
+     <label>Message / Requirements</label>
+    <textarea name="message"></textarea>
+
+    <button type="submit">Submit Booking</button>
+
+</form>
+
+</body>
+</html>

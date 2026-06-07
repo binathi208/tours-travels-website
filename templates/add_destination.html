@@ -1,0 +1,36 @@
+<h2>Add Destination</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Destination Name" required><br><br>
+    <input type="text" name="description" placeholder="Description" required><br><br>
+    <input type="number" name="nights" placeholder="Number of Nights" required><br><br>
+    <input type="number" name="days" placeholder="Number of Days" required><br><br>
+    <textarea name="itinerary" placeholder="Enter itinerary" rows="5" cols="40" required></textarea><br><br>
+    <input type="file" name="image" id="imageInput" required><br><br>
+    <img id="preview" width="200" style="display:none;"><br><br>
+
+    <select name="type" required>
+        <option value="">Select Type</option>
+        <option value="domestic">Domestic</option>
+        <option value="international">International</option>
+    </select><br><br>
+
+    <button type="submit">Add Destination</button>
+</form>
+
+<script>
+document.getElementById("imageInput").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            const preview = document.getElementById("preview");
+            preview.src = e.target.result;
+            preview.style.display = "block";
+        }
+
+        reader.readAsDataURL(file);
+    }
+});
+</script>
